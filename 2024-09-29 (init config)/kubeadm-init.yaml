@@ -1,7 +1,12 @@
-kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta3
-kubernetesVersion: v1.30.5
+kind: InitConfiguration
+
 ---
-kind: KubeletConfiguration
-apiVersion: kubelet.config.k8s.io/v1beta1
-cgroupDriver: systemd
+
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+networking:
+  serviceSubnet: 20.24.0.0/12
+  dnsDomain: k8s.ytzyar.cc
+kubernetesVersion: 1.30.5
+clusterName: ytdown
